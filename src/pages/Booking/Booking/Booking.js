@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 const Booking = () => {
     const {bookingId} = useParams();
     return (
-        <div style={{marginTop : "100px"}}>
+        <div>
             <h3>this is {bookingId}</h3>
         </div>
     );
