@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./Context/AuthProvider";
+import AddServices from "./pages/AddSerivices/AddServices";
 import Booking from "./pages/Booking/Booking/Booking";
 import Home from "./pages/Home/Home/Home";
 import Login from "./pages/Login/Login/Login";
 import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 import Register from "./pages/Login/Register/Register";
+import ManageServices from "./pages/ManageServices/ManageServices";
 import NotFound from "./pages/NotFound/NotFound";
 import Header from "./pages/Shared/Header/Header";
 
@@ -28,6 +30,8 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/addservice" element={<AddServices/>}/>
+            <Route path="/manageServices" element={<ManageServices/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
