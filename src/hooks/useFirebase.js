@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import firebaseAuthentication from "../pages/Login/Firebase/firebase.init";
 
@@ -49,9 +49,14 @@ const useFirebase = () => {
         await updateProfile(auth.currentUser,{displayName : name})
         const user = auth.currentUser;
         setUser(user);
+    };
+
+    async function signIn (email,password) {
+        await signInWithEmailAndPassword(auth,email,password)
+
     }
 
-    return {handleGoogleSignIn,user, logout,loading,signUp}
+    return {handleGoogleSignIn,user, logout,loading,signUp,signIn}
 }
 
 export default useFirebase;
